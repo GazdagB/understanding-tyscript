@@ -1,15 +1,14 @@
-function add(n1, n2, showResult, prefix) {
-    if (prefix === void 0) { prefix = ""; }
-    var result = n1 + n2;
-    if (showResult) {
-        console.log(prefix + result);
-    }
-    return result;
+// Good to use when you wont know what it will be
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'Max';
+//Later if you type check it you can reasign it to other variables.
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-;
-var number1 = "5";
-var number2 = 2.8;
-var printResult = true;
-var prefix = "Result: ";
-var result = add(Number(number1), Number(number2), printResult, prefix);
-console.log(result);
+// userName = userInput //Throws error; 
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+}
+var result = generateError('An error occured', 500);

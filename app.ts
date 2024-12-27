@@ -1,16 +1,19 @@
-function add(n1: number,n2: number, showResult: boolean, prefix: string = ""){
-    const result = n1 + n2; 
-    if(showResult){
-        console.log(prefix + result);
-    }
-    return result;
-};
+// Good to use when you wont know what it will be
+let userInput: unknown; 
+let userName : string; 
 
-const number1 = "5"; 
-const number2 = 2.8; 
-const printResult = true; 
-const prefix = "Result: "
+userInput = 5; 
+userInput = 'Max'
 
-const result = add(Number(number1),Number(number2), printResult, prefix)
+//Later if you type check it you can reasign it to other variables.
+if(typeof userInput === 'string'){
+    userName = userInput;
+}
 
-console.log(result);
+// userName = userInput //Throws error; 
+
+function generateError(message: string, code: number) : never {
+    throw {message: message, errorCode: code};
+}
+
+const result = generateError('An error occured', 500);
